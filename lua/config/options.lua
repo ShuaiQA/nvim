@@ -7,6 +7,7 @@ vim.g.mapleader = " "
 vim.o.scrolloff = 8             -- 上下移动8行
 vim.o.sidescrolloff = 8
 vim.o.tgc = true
+vim.o.number = true
 vim.o.relativenumber = true
 vim.o.cursorline = true -- 高亮所在行
 vim.o.tabstop = 2       --tab 设置

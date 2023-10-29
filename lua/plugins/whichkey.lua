@@ -6,8 +6,8 @@ return {
 		wk.setup(opts)
 		local n_opts = { mode = "n", prefix = "<leader>" }
 		local normal_keymap = {
-			q = { ":wa<cr>:qa<cr>", "Quit" },
-			w = { ":wall<cr>", "Saving" },
+			q = { "<cmd>wa<cr><cmd>qa<cr>", "Quit" },
+			w = { "<cmd>wall<cr>", "Saving" },
 			b = { name = "buffer" },
 			g = { name = "git" },
 			l = { name = "lsp" },

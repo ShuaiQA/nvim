@@ -1,4 +1,4 @@
-local ensure_installed = { "clangd", "lua_ls", "texlab", "gopls", "pyright", "bashls" }
+local ensure_installed = { "clangd", "lua_ls", "texlab", "gopls", "pyright", "bashls", "jsonls" }
 return {
 	{
 		"williamboman/mason.nvim",
@@ -19,6 +19,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"SmiteshP/nvim-navic"
 		},

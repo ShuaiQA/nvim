@@ -21,7 +21,8 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			"SmiteshP/nvim-navic"
+			"SmiteshP/nvim-navic",
+			'weilbith/nvim-code-action-menu',
 		},
 		keys = {
 			{ "gd",         vim.lsp.buf.definition,     desc = "go to definition" },
@@ -34,6 +35,7 @@ return {
 			{ '<leader>ll', vim.diagnostic.setloclist,  desc = "diagnostic list" },
 			{ '<leader>lr', vim.lsp.buf.rename,         desc = "buf rename" },
 			{ '<leader>lf', vim.lsp.buf.format,         desc = "buffer format" },
+			{ '<leader>la', "<cmd>CodeActionMenu<cr>",  desc = "code_action" },
 		},
 		config = function()
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()

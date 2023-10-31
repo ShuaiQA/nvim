@@ -5,7 +5,7 @@
 vim.api.nvim_create_autocmd({ "InsertLeave" }, {
 	pattern = { "*.go", "*.cpp", "*.c", "*.lua", "*.c", "*.json" },
 	callback = function()
-		vim.api.nvim_command("w")
+		vim.api.nvim_command('w')
 		vim.lsp.buf.format({ async = true })
 	end,
 })

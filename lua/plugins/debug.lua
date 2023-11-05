@@ -1,23 +1,27 @@
+-- error
 return {
 	"ravenxrz/nvim-dap",
 	config = function()
 		local dap = require('dap')
-		dap.adapters.lldb = {
-			type = 'executable',
-			command = '/opt/homebrew/opt/llvm/bin/lldb-vscode',
-			name = 'lldb'
+		dap.adapters.codelldb = {
+			type = 'server',
+			port = "${port}",
+			host = "localhost",
+			executable = {
+				command = '/Users/shuai/.local/share/nvim/mason/bin/codelldb',
+				args = { "--port", "${port}" },
+			}
 		}
 		dap.configurations.cpp = {
 			{
-				name = 'Launch',
-				type = 'lldb',
-				request = 'launch',
+				name = "Launch file",
+				type = "codelldb",
+				request = "launch",
 				program = function()
 					return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
 				end,
 				cwd = '${workspaceFolder}',
 				stopOnEntry = false,
-				args = {},
 			},
 		}
 		dap.configurations.c = dap.configurations.cpp

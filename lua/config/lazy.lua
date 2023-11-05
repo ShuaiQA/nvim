@@ -9,7 +9,6 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
 	spec = {
-		-- { import = "lazyvim.plugins.extras.dap.core" },
 		{ import = "plugins" },
 	},
 	defaults = {
